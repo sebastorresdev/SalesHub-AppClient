@@ -1,0 +1,21 @@
+<div class="min-h-screen flex flex-col">
+    <app-header (menuClicked)="handleMenuClick()" class="fixed top-0 w-full flex items-center justify-center h-14 z-10">
+    </app-header>
+    <div class="flex flex-1 mt-14">
+        @if (false) {
+        <p-sidebar [(visible)]="isCollapsed" styleClass="w-64 fixed top-14">
+            <ng-template pTemplate="headless">
+                <app-nav-menu class="h-full"></app-nav-menu>
+            </ng-template>
+        </p-sidebar>
+        }
+        @else {
+        <app-nav-menu [isCollapsed]="isCollapsed" class="fixed top-14 left-0 w-64 h-full z-10">
+        </app-nav-menu>
+        }
+        <main class="flex-1 bg-gray-100 p-4 overflow-auto transition-all duration-200 ease"
+            [ngClass]="isCollapsed? 'ml-16':'ml-64'">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>
