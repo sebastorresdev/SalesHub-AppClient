@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
+import { CardInfoComponent } from './components/card-info/card-info.component';
+import { ChartComponent } from './components/chart/chart.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [],
+  imports: [
+    CardInfoComponent,
+    ChartComponent
+  ],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
 

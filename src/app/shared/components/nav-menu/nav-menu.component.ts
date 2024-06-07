@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { TooltipModule } from 'primeng/tooltip';
 
@@ -25,6 +25,7 @@ export interface MenuItem {
 export class NavMenuComponent {
 
   @Input() isCollapsed: boolean = false;
+  @Output() messageEvent = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -39,6 +40,10 @@ export class NavMenuComponent {
       { label: "Historial ventas", icon: "#history", routerLink: "historial-ventas" },
       { label: "Reportes", icon: "#report", routerLink: "reportes" },
     ]
+  }
+
+  selectedMenu(): void {
+    this.messageEvent.emit(false);
   }
 
 }

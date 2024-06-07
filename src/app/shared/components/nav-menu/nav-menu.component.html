@@ -1,14 +1,14 @@
 <nav class="flex flex-col flex-shrink-0 h-full bg-[#fdfeff] transition-all duration-200 ease shadow border-r box-border"
-    [ngClass]="isCollapsed ? '' : 'p-3'" [ngClass]=" isCollapsed ? 'w-16' : 'w-64'">
+    [ngClass]=" isCollapsed ? 'w-16' : 'w-64'">
     <ul class="flex flex-col gap-2 p-2 " [ngClass]="isCollapsed ? 'text-center' : ''">
         @for (item of items; track $index) {
         <li class="hover:bg-[#f3f4f5] rounded-lg  ">
-            <a [pTooltip]="item.label" tooltipPosition="right" [tooltipDisabled]="!isCollapsed"
+            <a [pTooltip]="item.label" tooltipPosition="right" [tooltipDisabled]="!isCollapsed" (click)="selectedMenu()"
                 [routerLink]="[item.routerLink]" routerLinkActive="text-indigo-500 bg-[#f3f4f5] font-bold"
                 [ngClass]="isCollapsed ? 'py-3 rounded' : ''" [routerLinkActiveOptions]="{ exact: true }"
                 class="text-[#636d76] flex gap-2 items-center h-10 rounded-lg text-sm">
                 <span class="align-middle ml-[13.5px]">
-                    <svg class=" w-5 h-5 fill-[#636d76]" routerLinkActive="fill-indigo-500">
+                    <svg class="w-5 h-5 fill-[#636d76]" routerLinkActive="fill-indigo-500">
                         <use [attr.xlink:href]="item.icon"></use>
                     </svg>
                 </span>
