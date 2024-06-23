@@ -28,10 +28,16 @@ export class MenuComponent implements OnInit {
   constructor(private _menuService: MenuService, public layoutSevices: LayoutService) {
   }
   ngOnInit(): void {
-    // this._menuService.getMenuItems().subscribe((data) => {
-    //   this.menuItems = data;
-    // })
+    this._menuService.getMenuItems().subscribe((data) => {
+      data.map(e => {
+        const menuItem: MenuItem = {
+          label: e.name,
+          icon: e.icon,
+          routerLink: e.url
+        };
 
-    this.menuItems = this._menuService.getMenuItems();
+        this.menuItems.push(menuItem);
+      })
+    })
   }
 }
