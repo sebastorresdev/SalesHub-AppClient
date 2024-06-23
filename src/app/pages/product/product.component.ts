@@ -1,18 +1,12 @@
 import { Component } from '@angular/core';
+import { ProductTableComponent } from './components/product-table/product-table.component';
+
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [],
+  imports: [ProductTableComponent, CardModule],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.css'
 })
-export class ProductComponent {
-  items: number[] = [];
-
-  ngOnInit() {
-    for (let index = 0; index < 100; index++) {
-      this.items.push(index);
-    }
-  }
-}
+export class ProductComponent { }

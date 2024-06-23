@@ -1,0 +1,20 @@
+<div class="w-full h-full">
+    <ul class="flex flex-col gap-2 p-2 w-full ">
+        @for (item of menuItems; track $index) {
+        <li class="hover:bg-[#f3f4f5] rounded-lg text-sm font-normal">
+            <a [pTooltip]="item.label" tooltipPosition="right" [tooltipDisabled]="!layoutSevices.state.isCollapsed"
+                [routerLink]="[item.routerLink]" routerLinkActive="text-indigo-500 bg-[#f3f4f5] font-bold"
+                [ngClass]="layoutSevices.state.isCollapsed ? 'py-3 rounded' : ''"
+                [routerLinkActiveOptions]="{ exact: true }" (click)="layoutSevices.onSelectedOption()"
+                class="text-[#636d76] flex gap-2 items-center h-10 rounded-lg">
+                <span class="align-middle ml-[14px]">
+                    <i [ngClass]="[item.icon, 'text-xl']"></i>
+                </span>
+                @if (!layoutSevices.state.isCollapsed) {
+                <span class="ms-1 whitespace-nowrap ">{{ item.label }}</span>
+                }
+            </a>
+        </li>
+        }
+    </ul>
+</div>

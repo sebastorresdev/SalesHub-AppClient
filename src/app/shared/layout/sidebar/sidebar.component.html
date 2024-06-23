@@ -1,0 +1,13 @@
+@if(layoutService.state.isDesktop) {
+<aside class="h-full fixed top-14 overflow-y-auto transition-all duration-300 ease"
+    [ngClass]="layoutService.state.isCollapsed? 'w-16':'w-64'">
+    <app-menu />
+</aside>
+}
+@else {
+<p-sidebar [(visible)]="layoutService.state.isSidebarVisible" styleClass="w-64 fixed top-14">
+    <ng-template pTemplate="headless">
+        <app-menu />
+    </ng-template>
+</p-sidebar>
+}

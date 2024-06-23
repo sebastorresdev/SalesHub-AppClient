@@ -1,0 +1,19 @@
+<p-toolbar
+    styleClass="border-none rounded-none text-white bg-blue-700 fixed top-0 left-0 right-0 h-14 flex flex-col justify-center content-between z-10">
+    <div class="flex items-center gap-2">
+        <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
+        <span class="font-bold text-2xl">
+            PROGRAMMING
+        </span>
+        <span class="rounded-full bg-yellow-500 ml-4 flex justify-center items-center w-10 h-10 cursor-pointer"
+            (click)="layoutService.sideBarToogle()">
+            <a class="pi pi-bars text-2xl text-neutral-800"></a>
+        </span>
+    </div>
+    <div class="flex items-center gap-2">
+        <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
+        <span class="font-bold">
+            Sebastian Torres
+        </span>
+    </div>
+</p-toolbar>
