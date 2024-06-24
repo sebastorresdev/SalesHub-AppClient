@@ -11,8 +11,6 @@ interface LayoutState {
 })
 export class LayoutService {
 
-  isMobile = false;
-
   innerWidth: number = 0;
   state: LayoutState = {
     isSidebarVisible: false,
@@ -42,8 +40,5 @@ export class LayoutService {
 
   updateInnerWidth(isDesktop: boolean) {
     this.state.isDesktop = isDesktop;
-    if (!this.state.isDesktop) {
-      this.isMobile = true;
-    }
   }
 }

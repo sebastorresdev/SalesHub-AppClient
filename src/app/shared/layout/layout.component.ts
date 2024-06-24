@@ -19,17 +19,13 @@ import { LayoutService } from './layout.service';
   ],
 })
 export class LayoutComponent implements OnInit {
-  isCollapsed: boolean = false;
-  isTabletOrMobile: boolean = false;
-  sidebarVisible: boolean = false;
-  screenWidth: number = 0;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, public layoutService: LayoutService) { }
 
   // mejorar esta parte
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.layoutService.updateInnerWidth(window.innerWidth >= 768);
+      this.layoutService.updateInnerWidth(window.innerWidth >= 1024);
     }
   }
 
@@ -37,7 +33,7 @@ export class LayoutComponent implements OnInit {
   onResize() {
     console.log(window.innerWidth);
     if (typeof window !== 'undefined') {
-      this.layoutService.updateInnerWidth(window.innerWidth >= 768);
+      this.layoutService.updateInnerWidth(window.innerWidth >= 1024);
     }
   }
 }

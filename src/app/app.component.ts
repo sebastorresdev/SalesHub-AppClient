@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+// proyecto
 import { LayoutComponent } from './shared/layout/layout.component';
 // primeng
 import { PrimeNGConfig } from 'primeng/api';
@@ -7,12 +8,11 @@ import { PrimeNGConfig } from 'primeng/api';
 @Component({
   selector: 'app-root',
   standalone: true,
+  templateUrl: './app.component.html',
   imports: [
     RouterOutlet,
     LayoutComponent,
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
   title = 'SalesHubAppClient';

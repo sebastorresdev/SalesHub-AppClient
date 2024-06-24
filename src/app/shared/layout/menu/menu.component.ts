@@ -23,7 +23,6 @@ import { LayoutService } from '../layout.service';
 export class MenuComponent implements OnInit {
 
   menuItems: MenuItem[] = [];
-  isCollapsed = false;
 
   constructor(private _menuService: MenuService, public layoutSevices: LayoutService) {
   }
